@@ -1,6 +1,29 @@
-# Clientpanel
+# persons_managment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+
+To install and run the Demo OS (windows or linux) must install below
+
+1- npm: 5.7.1
+2- Angular CLI: 1.7.4
+3- Node: 6.10.0
+
+To run demo
+
+1- extract the persons_managment.rar file
+2- using terminal or cmd (go to directory persons managment)
+3- run " npm install "
+4- run " ng serve "
+
+
+Kindly note : I use firebase to save and get user 
+
+https://console.firebase.google.com/u/2/project/angular-demo-5af03/overview
+
+
+gmail account :  next2.demo@gmail.com
+password:          next2_next2
+
 
 ## Development server
 
