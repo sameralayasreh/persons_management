@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{'Register' | translate}}</h5>
+                <img class="mx-auto d-block" src="../../../assets/img/logo.png" alt="">
+                <form (submit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="email">{{'UserName' | translate}}</label>
+                        <input type="username" class="form-control" [(ngModel)]="username" #userName="ngModel" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">{{'Email' | translate}}</label>
+                        <input type="email" class="form-control" [(ngModel)]="email" #userEmail="ngModel" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">{{'Password' | translate}}</label>
+                        <input type="password" class="form-control" [(ngModel)]="password" #userPassword="ngModel" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">{{'Confirm Password' | translate}}</label>
+                        <input type="password" class="form-control" [(ngModel)]="confirmPassword" #userConfirmPassword="ngModel" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="{{'Register' | translate}}">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

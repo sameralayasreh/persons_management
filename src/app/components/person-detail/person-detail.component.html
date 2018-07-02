@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4 text-center">
+        <a href="/" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> {{'Go to dashboard' | translate}}</a>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-group pull-right">
+            <a [routerLink]="['/edit-person/' + id]" class="btn btn-info">{{'Edit' | translate}}</a>
+            <button type="button" class="btn btn-danger" (click)="onDelete(id)">{{'Delete' | translate}}</button>
+        </div>
+    </div>
+</div>
+<br>
+<div *ngIf="person" class="card">
+    <div class="card-header">
+        <h4>{{'Person' | translate}}: {{person?.firstName}} {{person?.lastName}}</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>{{'PersonID' | translate}}: {{person?.$key}}</h3>
+            </div>
+            <div class="col-md-4">
+                <h5 class="pull-right">{{'Balance' | translate}}:
+                    <span [class.text-danger]="hasBalance" [class.text-success]="!hasBalance">
+                    {{person?.balance | currency:"USD":true}}
+                </span>
+                    <!-- <small><a href=""><i class="fa fa-pencil"></i></a></small> -->
+                    <a (click)="showBalanceUpdateInput = !showBalanceUpdateInput"><i class="fa fa-pencil"></i></a>
+                </h5>
+                <div class="clearfix">
+                    <form *ngIf="showBalanceUpdateInput" (submit)="updateBalance()" class="form-inline pull-right">
+                        <div class="form-group mx-sm-1 mb-2">
+                            <input type="text" [(ngModel)]="person.balance" name="balance" #personBalance class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">{{'Update' | translate}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">{{'Email' | translate}}: {{person?.email}}</li>
+                <li class="list-group-item">{{'Phone' | translate}}: {{person?.phone}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
